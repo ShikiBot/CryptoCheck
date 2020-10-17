@@ -1,0 +1,7 @@
+Z:\projects\CryptoCheck\CryptoCheck\bin\Debug\CryptoCheck.exe.config
+Z:\projects\CryptoCheck\CryptoCheck\bin\Debug\CryptoCheck.exe
+Z:\projects\CryptoCheck\CryptoCheck\bin\Debug\CryptoCheck.pdb
+Z:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.csprojAssemblyReference.cache
+Z:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.exe
+Z:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.pdb
+Z:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.csproj.CoreCompileInputs.cache
