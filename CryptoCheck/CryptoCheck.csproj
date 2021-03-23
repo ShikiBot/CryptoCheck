@@ -42,11 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="argsSruct.cs" />
+    <Compile Include="Classes\ConsoleInFileOut.cs" />
+    <Compile Include="Classes\ConsoleInOut.cs" />
+    <Compile Include="Classes\ErrorParser.cs" />
+    <Compile Include="Classes\FileInConsoleOut.cs" />
+    <Compile Include="Classes\FileInFileOut.cs" />
+    <Compile Include="Classes\FileStreamer.cs" />
+    <Compile Include="Classes\Gost28147_89.cs" />
+    <Compile Include="Classes\GostReturn.cs" />
+    <Compile Include="Classes\HelpInfo.cs" />
+    <Compile Include="Classes\InputParser.cs" />
+    <Compile Include="Classes\OutputParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

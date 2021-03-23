@@ -5,3 +5,10 @@ Z:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.csprojAssemblyReferenc
 Z:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.exe
 Z:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.pdb
 Z:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.csproj.CoreCompileInputs.cache
+E:\projects\CryptoCheck\CryptoCheck\bin\Debug\CryptoCheck.exe.config
+E:\projects\CryptoCheck\CryptoCheck\bin\Debug\CryptoCheck.exe
+E:\projects\CryptoCheck\CryptoCheck\bin\Debug\CryptoCheck.pdb
+E:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.csprojAssemblyReference.cache
+E:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.csproj.CoreCompileInputs.cache
+E:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.exe
+E:\projects\CryptoCheck\CryptoCheck\obj\Debug\CryptoCheck.pdb
