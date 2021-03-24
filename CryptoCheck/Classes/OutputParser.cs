@@ -22,7 +22,7 @@ namespace CryptoCheck.Classes
         ~OutputParser() { }
         public Object OutputClass()
         {
-            if (ArgsConflict == null & ArgsOoR == null)
+            if (ArgsConflict == null & ArgsOoR == null & ToManyArgs == null & ArgsUnknown == null)
             {
                 if (ArgsList.ContainsKey(Args.ArgsType.HELP))
                 {
@@ -48,6 +48,14 @@ namespace CryptoCheck.Classes
             else if (ArgsConflict != null)
             {
                 return ArgsConflict;
+            }
+            else if (ToManyArgs != null)
+            {
+                return ToManyArgs;
+            }
+            else if (ArgsUnknown != null)
+            {
+                return ArgsUnknown;
             }
             else 
             {

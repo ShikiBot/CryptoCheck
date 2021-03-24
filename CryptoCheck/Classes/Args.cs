@@ -1,6 +1,6 @@
 ﻿namespace CryptoCheck
 {
-    struct Args
+    class Args
     {
         public enum ArgsType
         {

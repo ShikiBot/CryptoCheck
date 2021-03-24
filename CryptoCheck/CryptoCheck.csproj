@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="argsSruct.cs" />
+    <Compile Include="Classes\Args.cs" />
     <Compile Include="Classes\ConsoleInFileOut.cs" />
     <Compile Include="Classes\ConsoleInOut.cs" />
     <Compile Include="Classes\ErrorParser.cs" />

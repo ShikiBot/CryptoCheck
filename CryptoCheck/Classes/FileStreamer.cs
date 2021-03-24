@@ -8,15 +8,21 @@ namespace CryptoCheck.Classes
         public FileStream StreamOUT { get; }
         public FileStreamer(string fileIN, string fileOUT, string password, Args.ArgsType mode) : base(password, mode)
         {
-            StreamIN = new FileStream(fileIN, FileMode.OpenOrCreate, FileAccess.Read);
+            StreamIN = fileIN != "" ? new FileStream(fileIN, FileMode.OpenOrCreate, FileAccess.Read) : null;
             StreamOUT = fileOUT != "" ? new FileStream(fileOUT, FileMode.OpenOrCreate, FileAccess.Write) : null;
         }
         ~FileStreamer()
         {
-            StreamIN.Dispose();
-            StreamIN.Close();
-            StreamOUT.Dispose();
-            StreamOUT.Close();
+            if (StreamIN != null)
+            {
+                StreamIN.Dispose();
+                StreamIN.Close();
+            }
+            if (StreamOUT != null)
+            {
+                StreamOUT.Dispose();
+                StreamOUT.Close();
+            }
         }
         public byte[] FileRead()
         {
