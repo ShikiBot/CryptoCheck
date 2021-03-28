@@ -1,19 +1,9 @@
-﻿namespace CryptoCheck
+﻿using CryptoCheck.Classes;
+
+namespace CryptoCheck
 {
     class Args
-    {
-        public enum ArgsType
-        {
-            HELP,
-            INPUTCONSOLE,
-            INPUTFILE,
-            OUTPUTCONSOLE,
-            OUTPUTFILE,
-            PASSWORD,
-            ENCRYPT,
-            DECRYPT
-        }
-
+    {   
         private int count;
         public ArgsType Arg { get; }
         public int Count { get { return count; } }

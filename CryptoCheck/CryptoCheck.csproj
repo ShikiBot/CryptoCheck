@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Args.cs" />
+    <Compile Include="ArgsType.cs" />
     <Compile Include="Classes\ConsoleInFileOut.cs" />
     <Compile Include="Classes\ConsoleInOut.cs" />
     <Compile Include="Classes\ErrorParser.cs" />
@@ -50,7 +51,7 @@
     <Compile Include="Classes\FileInFileOut.cs" />
     <Compile Include="Classes\FileStreamer.cs" />
     <Compile Include="Classes\Gost28147_89.cs" />
-    <Compile Include="Classes\GostReturn.cs" />
+    <Compile Include="Classes\IObase.cs" />
     <Compile Include="Classes\HelpInfo.cs" />
     <Compile Include="Classes\InputParser.cs" />
     <Compile Include="Classes\OutputParser.cs" />

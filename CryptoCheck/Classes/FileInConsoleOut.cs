@@ -5,7 +5,7 @@ namespace CryptoCheck.Classes
 {
     class FileInConsoleOut: FileStreamer
     {
-        public FileInConsoleOut(string fileIN, string password, Args.ArgsType mode) : base(fileIN, "", password, mode)
+        public FileInConsoleOut(string fileIN, string password, ArgsType mode) : base(fileIN, "", password, mode)
         {
             Data = FileRead();
         }
@@ -13,8 +13,8 @@ namespace CryptoCheck.Classes
 
         public new void Output()
         {
-            if (Mode == Args.ArgsType.ENCRYPT) Console.Write(Encoding.Default.GetString(Encrypt(Data, Key)));
-            else Console.Write(Encoding.Default.GetString(Decrypt(Data, Key)));
+            if (Mode == ArgsType.ENCRYPT) Console.Write(Encoding.Default.GetString(Gost28147_89.Encrypt(Data, Key)));
+            else Console.Write(Encoding.Default.GetString(Gost28147_89.Decrypt(Data, Key)));
         }
     }
 }

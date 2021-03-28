@@ -1,16 +1,16 @@
 ﻿namespace CryptoCheck.Classes
 {
-    class GostReturn: Gost28147_89
+    class IObase
     {
         public byte[] Data { get; set; }
         public byte[] Key { get; }
-        public Args.ArgsType Mode { get; }
-        public GostReturn(string password, Args.ArgsType mode)
+        public ArgsType Mode { get; }
+        public IObase(string password, ArgsType mode)
         {
-            Key = GetKey(password);
+            Key = Gost28147_89.GetKey(password);
             Mode = mode;
         }
-        ~GostReturn() { }
+        ~IObase() { }
         public void Output()
         {
             

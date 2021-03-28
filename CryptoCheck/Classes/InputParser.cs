@@ -8,13 +8,13 @@ namespace CryptoCheck.Classes
         public bool Outofrange { get { return outofrange; } }
         private bool ununknownArg;
         public bool UnunknownArg { get { return ununknownArg; } }
-        readonly private Dictionary<Args.ArgsType, Args> argsList;        
-        public Dictionary<Args.ArgsType, Args> ArgsList { get { return argsList; } }
+        readonly private Dictionary<ArgsType, Args> argsList;        
+        public Dictionary<ArgsType, Args> ArgsList { get { return argsList; } }
         public InputParser(string [] args)
         {
-            argsList = new Dictionary<Args.ArgsType, Args>();
+            argsList = new Dictionary<ArgsType, Args>();
             Parse(args);
-            if (!argsList.ContainsKey(Args.ArgsType.OUTPUTFILE)) argsList.Add(Args.ArgsType.OUTPUTCONSOLE, new Args(Args.ArgsType.OUTPUTCONSOLE));
+            if (!argsList.ContainsKey(ArgsType.OUTPUTFILE)) argsList.Add(ArgsType.OUTPUTCONSOLE, new Args(ArgsType.OUTPUTCONSOLE));
         }
         ~InputParser(){ }
 
@@ -26,39 +26,39 @@ namespace CryptoCheck.Classes
                 {
                     string k = "";
                     if (args[i].ToLower() == "-h" | args[i].ToLower() == "--help")
-                        if (!argsList.ContainsKey(Args.ArgsType.HELP))
-                            argsList.Add(Args.ArgsType.HELP, new Args(Args.ArgsType.HELP));
-                        else argsList[Args.ArgsType.HELP].AddCount();
+                        if (!argsList.ContainsKey(ArgsType.HELP))
+                            argsList.Add(ArgsType.HELP, new Args(ArgsType.HELP));
+                        else argsList[ArgsType.HELP].AddCount();
                     else if (args[i].ToLower() == "-e")
-                        if (!argsList.ContainsKey(Args.ArgsType.ENCRYPT))
-                            argsList.Add(Args.ArgsType.ENCRYPT, new Args(Args.ArgsType.ENCRYPT));
-                        else argsList[Args.ArgsType.ENCRYPT].AddCount();
+                        if (!argsList.ContainsKey(ArgsType.ENCRYPT))
+                            argsList.Add(ArgsType.ENCRYPT, new Args(ArgsType.ENCRYPT));
+                        else argsList[ArgsType.ENCRYPT].AddCount();
                     else if (args[i].ToLower() == "-d")
-                        if (!argsList.ContainsKey(Args.ArgsType.DECRYPT))
-                            argsList.Add(Args.ArgsType.DECRYPT, new Args(Args.ArgsType.DECRYPT));
-                        else argsList[Args.ArgsType.DECRYPT].AddCount();
+                        if (!argsList.ContainsKey(ArgsType.DECRYPT))
+                            argsList.Add(ArgsType.DECRYPT, new Args(ArgsType.DECRYPT));
+                        else argsList[ArgsType.DECRYPT].AddCount();
                     else if (args[i].ToLower() == "-t" | args[i].ToLower() == "--text")
-                        if (!argsList.ContainsKey(Args.ArgsType.INPUTCONSOLE))
+                        if (!argsList.ContainsKey(ArgsType.INPUTCONSOLE))
                         {
                             k = args[i + 1][0] == '\\' ? args[i + 1].Remove(0, 1) : args[i + 1];
-                            argsList.Add(Args.ArgsType.INPUTCONSOLE, new Args(Args.ArgsType.INPUTCONSOLE, k));
+                            argsList.Add(ArgsType.INPUTCONSOLE, new Args(ArgsType.INPUTCONSOLE, k));
                         }
-                        else argsList[Args.ArgsType.INPUTCONSOLE].AddCount();
+                        else argsList[ArgsType.INPUTCONSOLE].AddCount();
                     else if (args[i].ToLower() == "-in")
-                        if (!argsList.ContainsKey(Args.ArgsType.INPUTFILE))
-                            argsList.Add(Args.ArgsType.INPUTFILE, new Args(Args.ArgsType.INPUTFILE, args[i + 1]));
-                        else argsList[Args.ArgsType.INPUTFILE].AddCount();
+                        if (!argsList.ContainsKey(ArgsType.INPUTFILE))
+                            argsList.Add(ArgsType.INPUTFILE, new Args(ArgsType.INPUTFILE, args[i + 1]));
+                        else argsList[ArgsType.INPUTFILE].AddCount();
                     else if (args[i].ToLower() == "-out")
-                        if (!argsList.ContainsKey(Args.ArgsType.OUTPUTFILE))
-                            argsList.Add(Args.ArgsType.OUTPUTFILE, new Args(Args.ArgsType.OUTPUTFILE, args[i + 1]));
-                        else argsList[Args.ArgsType.OUTPUTFILE].AddCount();
+                        if (!argsList.ContainsKey(ArgsType.OUTPUTFILE))
+                            argsList.Add(ArgsType.OUTPUTFILE, new Args(ArgsType.OUTPUTFILE, args[i + 1]));
+                        else argsList[ArgsType.OUTPUTFILE].AddCount();
                     else if (args[i].ToLower() == "-p" | args[i].ToLower() == "--password")
-                        if (!argsList.ContainsKey(Args.ArgsType.PASSWORD))
+                        if (!argsList.ContainsKey(ArgsType.PASSWORD))
                         {
                             k = args[i + 1][0] == '\\' ? args[i + 1].Remove(0, 1) : args[i + 1];
-                            argsList.Add(Args.ArgsType.PASSWORD, new Args(Args.ArgsType.PASSWORD, k));
+                            argsList.Add(ArgsType.PASSWORD, new Args(ArgsType.PASSWORD, k));
                         }
-                        else argsList[Args.ArgsType.PASSWORD].AddCount();
+                        else argsList[ArgsType.PASSWORD].AddCount();
                     else if (args[i][0] == '-') ununknownArg = true; 
                 }
                 catch { outofrange = true; }

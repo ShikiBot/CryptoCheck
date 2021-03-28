@@ -5,11 +5,10 @@ using System.Security.Cryptography;
 
 namespace CryptoCheck.Classes
 {
-    class Gost28147_89
+    static class Gost28147_89
     {
-        ~Gost28147_89() { }
 
-        private readonly byte[,] SBox = new byte[8, 16]
+        private static readonly byte[,] SBox = new byte[8, 16]
         {
             { 0xA, 0x9, 0xD, 0x6, 0xE, 0xB, 0x4, 0x5, 0xF, 0x1, 0x3, 0xC, 0x7, 0x0, 0x8, 0x2 },
             { 0x8, 0x0, 0xC, 0x4, 0x9, 0x6, 0x7, 0xB, 0x2, 0x3, 0x1, 0xF, 0x5, 0xE, 0xA, 0xD },
@@ -25,7 +24,7 @@ namespace CryptoCheck.Classes
         /// <param name="message"> Кодируемое сообщение </param>
         /// <param name="key"> Ключ шифрования сообщения (строка из 32 символов) </param>
         /// <returns> Возвращает зашифрованное сообщение в формате string </returns>
-        public byte[] Encrypt(byte[] message, byte[] key256)
+        public static byte[] Encrypt(byte[] message, byte[] key256)
         {
             List<byte> crypted = new List<byte>();
             byte[] crypt;
@@ -50,7 +49,7 @@ namespace CryptoCheck.Classes
         /// <param name="message"> Раскодируемое сообщение </param>
         /// <param name="key"> Ключ расшифровки сообщения (строка из 32 символов) </param>
         /// <returns> Возвращает расшифрованное сообщение в формате string </returns>
-        public byte[] Decrypt(byte[] message, byte[] key256)
+        public static byte[] Decrypt(byte[] message, byte[] key256)
         {
             List<byte> decrypted = new List<byte>();
             byte[] decrypt;
@@ -71,14 +70,14 @@ namespace CryptoCheck.Classes
             return decrypted.ToArray();
         }
 
-        public byte[] GetKey(string password)
+        public static byte[] GetKey(string password)
         {
             byte[] bkey = ((HashAlgorithm)CryptoConfig.CreateFromName("MD5")).ComputeHash(new UTF8Encoding().GetBytes(password));
             string key = BitConverter.ToString(bkey).Replace("-", string.Empty).ToLower();
             return Encoding.Default.GetBytes(key);
         }
 
-        private void FeistelRound(ref UInt32 N1, ref UInt32 N2, UInt32[] key32, int CNum) //
+        private static void FeistelRound(ref UInt32 N1, ref UInt32 N2, UInt32[] key32, int CNum) //
         {
             UInt32 RoundRes, buf;
             RoundRes = (N1 + key32[CNum % 8]) % UInt32.MaxValue; // Сумма блока N1 с ключем kn
@@ -89,7 +88,7 @@ namespace CryptoCheck.Classes
             N2 = buf; // Обмен блоков N1 и N2
         }
 
-        private UInt32 STable(UInt32 block32, int Cnum) // Замена N блока в соответсвии с S таблицей
+        private static UInt32 STable(UInt32 block32, int Cnum) // Замена N блока в соответсвии с S таблицей
         {
             byte b4b1, b4b2;
             byte[] blocks4 = Block32to4(block32);
@@ -103,7 +102,7 @@ namespace CryptoCheck.Classes
             return Blocks4to32(blocks4);
         }
 
-        private UInt32[] Block256to32(byte[] key256) // Разбиение ключа на 8 32-битных подключа
+        private static UInt32[] Block256to32(byte[] key256) // Разбиение ключа на 8 32-битных подключа
         {
             UInt32[] blocs32 = new UInt32[8];
             for (int i = 0; i < 8; i++)
@@ -114,7 +113,7 @@ namespace CryptoCheck.Classes
             return blocs32;
         }
 
-        private UInt64 Blocks8to64(byte[] blocks8, int x) // Объединение 8-битных блоков в один 64-битный
+        private static UInt64 Blocks8to64(byte[] blocks8, int x) // Объединение 8-битных блоков в один 64-битный
         {
             UInt64 block64 = 0;
             for (int i = x; i < x + 8; i++)
@@ -127,7 +126,7 @@ namespace CryptoCheck.Classes
             return block64;
         }
 
-        private byte[] Block32to4(UInt32 block32) // Разбиение 32-битного блока на 8-ми битные блоки
+        private static byte[] Block32to4(UInt32 block32) // Разбиение 32-битного блока на 8-ми битные блоки
         {                                         // (c# не умеет делать 4-битные блоки)
             byte[] blocks4 = new byte[4];
             for (int i = 0; i < 4; i++)
@@ -135,7 +134,7 @@ namespace CryptoCheck.Classes
             return blocks4;
         }
 
-        private UInt32 Blocks4to32(byte[] blocks4) // Объединение 8-(4-) битных блоков в один 32-битный
+        private static UInt32 Blocks4to32(byte[] blocks4) // Объединение 8-(4-) битных блоков в один 32-битный
         {
             UInt32 block32 = 0;
             for (int i = 0; i < 4; i++)
@@ -143,14 +142,14 @@ namespace CryptoCheck.Classes
             return block32;
         }
 
-        private UInt64 Block32to64(UInt32 N1, UInt32 N2) // Объединение двух 32-битных блоков в один 64-битный
+        private static UInt64 Block32to64(UInt32 N1, UInt32 N2) // Объединение двух 32-битных блоков в один 64-битный
         {
             UInt64 block64 = N2;
             block64 = block64 << 32 | N1;
             return block64;
         }
 
-        private byte[] Block64to8(UInt64 block64) // Разбиение 64-битного блока на 8-ми битные блоки
+        private static byte[] Block64to8(UInt64 block64) // Разбиение 64-битного блока на 8-ми битные блоки
         {
             byte[] blocks8 = new byte[8];
             for (int i = 0; i < 8; i++)
@@ -158,7 +157,7 @@ namespace CryptoCheck.Classes
             return blocks8;
         }
 
-        private UInt32 CycleShiftL(UInt32 block32, int n) // Циклический сдвиг 32-битного блока влево на n бит
+        private static UInt32 CycleShiftL(UInt32 block32, int n) // Циклический сдвиг 32-битного блока влево на n бит
         {
             return (UInt32)((block32 << n) | (block32 >> (32 - n)));
         }

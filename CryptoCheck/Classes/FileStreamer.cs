@@ -2,11 +2,11 @@
 
 namespace CryptoCheck.Classes
 {
-    class FileStreamer: GostReturn
+    class FileStreamer: IObase
     {
         public FileStream StreamIN { get; }
         public FileStream StreamOUT { get; }
-        public FileStreamer(string fileIN, string fileOUT, string password, Args.ArgsType mode) : base(password, mode)
+        public FileStreamer(string fileIN, string fileOUT, string password, ArgsType mode) : base(password, mode)
         {
             StreamIN = fileIN != "" ? new FileStream(fileIN, FileMode.OpenOrCreate, FileAccess.Read) : null;
             StreamOUT = fileOUT != "" ? new FileStream(fileOUT, FileMode.OpenOrCreate, FileAccess.Write) : null;

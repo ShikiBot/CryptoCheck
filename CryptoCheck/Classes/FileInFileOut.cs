@@ -2,7 +2,7 @@
 {
     class FileInFileOut: FileStreamer
     {
-        public FileInFileOut(string fileIN, string fileOUT, string password, Args.ArgsType mode) : base(fileIN, fileOUT, password, mode)
+        public FileInFileOut(string fileIN, string fileOUT, string password, ArgsType mode) : base(fileIN, fileOUT, password, mode)
         {
             Data = FileRead();
         }
@@ -10,8 +10,8 @@
 
         public new void Output()
         {
-            if (Mode == Args.ArgsType.ENCRYPT) FileWrite(Encrypt(Data, Key));
-            else FileWrite(Decrypt(Data, Key));
+            if (Mode == ArgsType.ENCRYPT) FileWrite(Gost28147_89.Encrypt(Data, Key));
+            else FileWrite(Gost28147_89.Decrypt(Data, Key));
         }
     }
 }
