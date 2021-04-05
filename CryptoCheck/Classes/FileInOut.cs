@@ -1,12 +1,12 @@
 ﻿namespace CryptoCheck.Classes
 {
-    class FileInFileOut: FileStreamer
+    class FileInOut: FileStreamer
     {
-        public FileInFileOut(string fileIN, string fileOUT, string password, ArgsType mode) : base(fileIN, fileOUT, password, mode)
+        public FileInOut(string fileIN, string fileOUT, string password, ArgsType mode) : base(fileIN, fileOUT, password, mode)
         {
             Data = FileRead();
         }
-        ~FileInFileOut() { }
+        ~FileInOut() { }
 
         public new void Output()
         {

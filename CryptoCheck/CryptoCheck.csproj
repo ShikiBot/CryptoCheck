@@ -48,7 +48,7 @@
     <Compile Include="Classes\ConsoleInOut.cs" />
     <Compile Include="Classes\ErrorParser.cs" />
     <Compile Include="Classes\FileInConsoleOut.cs" />
-    <Compile Include="Classes\FileInFileOut.cs" />
+    <Compile Include="Classes\FileInOut.cs" />
     <Compile Include="Classes\FileStreamer.cs" />
     <Compile Include="Classes\Gost28147_89.cs" />
     <Compile Include="Classes\IObase.cs" />

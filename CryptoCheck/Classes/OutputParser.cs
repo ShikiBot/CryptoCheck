@@ -32,7 +32,7 @@ namespace CryptoCheck.Classes
                 else if (ArgsList.ContainsKey(ArgsType.INPUTFILE) & ArgsList.ContainsKey(ArgsType.OUTPUTCONSOLE))
                     return new FileInConsoleOut(Filein, Password, Mode);
                 else if (ArgsList.ContainsKey(ArgsType.INPUTFILE) & ArgsList.ContainsKey(ArgsType.OUTPUTFILE))
-                    return new FileInFileOut(Filein, Fileout, Password, Mode);
+                    return new FileInOut(Filein, Fileout, Password, Mode);
             }
             else if (ArgsConflict != null) return ArgsConflict;
             else if (ArgsOoR != null) return ArgsOoR;
