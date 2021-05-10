@@ -52,6 +52,7 @@
     <Compile Include="Classes\FileStreamer.cs" />
     <Compile Include="Classes\Gost28147_89.cs" />
     <Compile Include="Classes\IObase.cs" />
+    <Compile Include="Classes\IOcrypt.cs" />
     <Compile Include="Classes\HelpInfo.cs" />
     <Compile Include="Classes\InputParser.cs" />
     <Compile Include="Classes\OutputParser.cs" />

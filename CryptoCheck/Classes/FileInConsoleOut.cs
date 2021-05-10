@@ -11,7 +11,7 @@ namespace CryptoCheck.Classes
         }
         ~FileInConsoleOut() { }
 
-        public new void Output()
+        public override void Output()
         {
             if (Mode == ArgsType.ENCRYPT) Console.Write(Encoding.Default.GetString(Gost28147_89.Encrypt(Data, Key)));
             else Console.Write(Encoding.Default.GetString(Gost28147_89.Decrypt(Data, Key)));

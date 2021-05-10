@@ -2,7 +2,7 @@
 
 namespace CryptoCheck.Classes
 {
-    class FileStreamer: IObase
+    class FileStreamer: IOcrypt
     {
         public FileStream StreamIN { get; }
         public FileStream StreamOUT { get; }

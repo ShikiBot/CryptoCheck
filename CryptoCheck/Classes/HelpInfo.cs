@@ -2,10 +2,10 @@
 
 namespace CryptoCheck.Classes
 {
-    class HelpInfo
+    class HelpInfo: IObase
     {
         ~HelpInfo() { }
-        public void ReturnHelp()
+        public override void Output()
         {
             string help =
                 "\n\t\t    Gost28147-89\n\n" +

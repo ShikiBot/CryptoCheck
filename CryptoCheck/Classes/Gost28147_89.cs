@@ -72,7 +72,8 @@ namespace CryptoCheck.Classes
 
         public static byte[] GetKey(string password)
         {
-            byte[] bkey = ((HashAlgorithm)CryptoConfig.CreateFromName("MD5")).ComputeHash(new UTF8Encoding().GetBytes(password));
+            var MD5 = (HashAlgorithm)CryptoConfig.CreateFromName("MD5");
+            byte[] bkey = MD5.ComputeHash(new UTF8Encoding().GetBytes(password));
             string key = BitConverter.ToString(bkey).Replace("-", string.Empty).ToLower();
             return Encoding.Default.GetBytes(key);
         }
@@ -80,15 +81,15 @@ namespace CryptoCheck.Classes
         private static void FeistelRound(ref UInt32 N1, ref UInt32 N2, UInt32[] key32, int CNum) //
         {
             UInt32 RoundRes, buf;
-            RoundRes = (N1 + key32[CNum % 8]) % UInt32.MaxValue; // Сумма блока N1 с ключем kn
-            RoundRes = STable(RoundRes, CNum % 8); // Замена в таблице S
-            RoundRes = CycleShiftL(RoundRes, 11); // Циклический сдвиг влево на 11 бит
+            RoundRes = (N1 + key32[CNum % 8]) % UInt32.MaxValue; 
+            RoundRes = STable(RoundRes, CNum % 8);
+            RoundRes = CycleShiftL(RoundRes, 11);
             buf = N1;
-            N1 = RoundRes ^ N2; // XOR измененного блока N1 с блоком N2
-            N2 = buf; // Обмен блоков N1 и N2
+            N1 = RoundRes ^ N2;
+            N2 = buf;
         }
 
-        private static UInt32 STable(UInt32 block32, int Cnum) // Замена N блока в соответсвии с S таблицей
+        private static UInt32 STable(UInt32 block32, int Cnum)
         {
             byte b4b1, b4b2;
             byte[] blocks4 = Block32to4(block32);

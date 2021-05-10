@@ -1,91 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CryptoCheck.Classes.ConsoleInFileOut">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\ConsoleInFileOut.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Classes.ConsoleInOut">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\ConsoleInOut.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Classes.ErrorParser">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Position X="3" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAACAAAAAAAAgAAAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\ErrorParser.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Classes.FileInConsoleOut">
-    <Position X="4" Y="3.75" Width="1.5" />
+    <Position X="6.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\FileInConsoleOut.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CryptoCheck.Classes.FileInFileOut">
-    <Position X="4" Y="2" Width="1.5" />
+  <Class Name="CryptoCheck.Classes.FileInOut">
+    <Position X="6.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\FileInFileOut.cs</FileName>
+      <FileName>Classes\FileInOut.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Classes.FileStreamer">
-    <Position X="2.25" Y="2.75" Width="1.5" />
+    <Position X="4.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAIAAAAAAAAAAAAEAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Classes\FileStreamer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Classes.Gost28147_89">
-    <Position X="11" Y="0.5" Width="1.5" />
+    <Position X="9.5" Y="0.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AYICACAAAEAAAAAQAAAAAAQAAIAAABEAAAAAAAAEQAA=</HashCode>
       <FileName>Classes\Gost28147_89.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CryptoCheck.Classes.IObase">
-    <Position X="0.5" Y="3" Width="1.5" />
+  <Class Name="CryptoCheck.Classes.IOcrypt">
+    <Position X="2.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAQAAAAIAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\IObase.cs</FileName>
+      <FileName>Classes\IOcrypt.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Classes.HelpInfo">
-    <Position X="5.75" Y="4" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>Classes\HelpInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Classes.InputParser">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="1.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACiAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAgAAAgI=</HashCode>
       <FileName>Classes\InputParser.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Classes.OutputParser">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Position X="4.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAEIAAAACCAAAAIAAAAAA=</HashCode>
       <FileName>Classes\OutputParser.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Program">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="10" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CryptoCheck.Args">
-    <Position X="12.75" Y="0.5" Width="1.5" />
+    <Position X="12.25" Y="2.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -94,8 +94,15 @@
       <FileName>Classes\Args.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="CryptoCheck.Classes.IObase" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\IObase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="CryptoCheck.Classes.ArgsType">
-    <Position X="7.5" Y="3.25" Width="1.5" />
+    <Position X="14" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAACABAAACAABAAAAAAAAAgAAAAAEAABAAAAA=</HashCode>
       <FileName>ArgsType.cs</FileName>

@@ -11,7 +11,7 @@ namespace CryptoCheck
             Stopwatch sw = new Stopwatch();
             OutputParser parser = new OutputParser(args);
             Object answer = parser.OutputClass();
-            if (answer is HelpInfo help) help.ReturnHelp();
+            if (answer is HelpInfo help) help.Output();
             sw.Start();
             if (answer is ConsoleInOut conInOut) conInOut.Output();
             if (answer is ConsoleInFileOut conInFilOut) conInFilOut.Output();
